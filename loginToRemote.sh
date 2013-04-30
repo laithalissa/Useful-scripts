@@ -18,16 +18,15 @@ EOF
 
 unleashTheKraken()
 {
-	echo "TODO!"
+  echo "TODO!"
 }
 
-TEST=
 SERVER=
 PASSWD=
 VERBOSE=
 while getopts "hs:u:p:k" OPTION
 do
-	case $OPTION in
+  case $OPTION in
         h)
             usage
             exit 1
@@ -36,17 +35,17 @@ do
             SERVER=$OPTARG
             ;;
         u)  
-			USERNAME=$OPTARG
-			;;
+            USERNAME=$OPTARG
+            ;;
         p)
             PASSWORD=$OPTARG
             ;;
         k) 
-			unleashTheKraken
-			exit 0
-			;;
+            unleashTheKraken
+            exit 0
+            ;;
         ?)
-	 		echo "error"
+      echo "error"
 
             usage
             exit
@@ -56,9 +55,9 @@ done
 
 if [[ -z $USERNAME ]] || [[ -z $SERVER ]] || [[ -z $PASSWD ]]
 then
-	 /usr/bin/expect -c  "spawn ssh $USERNAME@$SERVER;\
- 	expect \".*password:\"; \
-	send \"$PASSWORD\n \";\
-	interact;"
+   /usr/bin/expect -c  "spawn ssh $USERNAME@$SERVER;\
+  expect \".*password:\"; \
+  send \"$PASSWORD\n \";\
+  interact;"
 fi
 
