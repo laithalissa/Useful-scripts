@@ -241,8 +241,6 @@ class Flattener:
 
 def main(parser):
     args = parser.parse_args()
-    if args.dry_run:
-        print 'Starting dry run'
 
     f = Flattener(
         args.pattern,
