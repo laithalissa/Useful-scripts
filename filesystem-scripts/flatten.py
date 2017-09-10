@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Take all files witing the specified directory, and if the match
+# Take all files within the specified directory, and if they match
 # the provided regex, move them to the specified directory
 #
 # Example invocation:
@@ -14,8 +14,8 @@ import sys
 
 parser = argparse.ArgumentParser(
     description=(
-        'Take all files witing the specified directory, and if the match '
-        'the provided regex, move them to the specified directory'
+        'Take all files within the specified directory, and if they '
+        'match the provided regex, move them to the specified directory'
     )
 )
 
@@ -26,7 +26,7 @@ parser.add_argument(
     action='store',
     dest='pattern',
     required=True,
-    help='file pattern to match'
+    help='File pattern to match'
 )
 
 parser.add_argument(
@@ -165,7 +165,7 @@ class Flattener:
     def discover_files(self):
         """
         Search for files matching the given pattern and return a relocation
-        plan- a dictionary of source string onto destination string.
+        plan (a dictionary of source string to destination string).
         """
         relocation_plan = {}
         for (dirpath, dirnames, filenames) in os.walk(self.source):
@@ -197,8 +197,8 @@ class Flattener:
         has been specified, the destination file's presence will be checked,
         and if it's found, no copy operation will be performed/
 
-        @param relocation_plan a dictionary of source file onto destination
-            file.
+        @param relocation_plan a dictionary of source file to destination
+                               file.
         """
         if self.dry_run:
             print 'Starting dry run...'
