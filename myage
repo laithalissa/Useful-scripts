@@ -12,7 +12,8 @@ person = {
 dob = datetime.date(
 	person['year'],
 	person['month'], 
-	person['day'])
+	person['day']
+)
 
 today = datetime.date.today()
 age = relativedelta.relativedelta(today, dob)
