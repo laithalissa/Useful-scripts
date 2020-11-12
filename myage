@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # todo: fix for python3
+# todo: remove 3rd party library
 import datetime
 from dateutil import relativedelta
 person = {
